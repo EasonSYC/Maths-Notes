@@ -1,0 +1,57 @@
+%!TEX TX-program = xelatex
+\documentclass[8pt]{article}
+
+\usepackage{ctex}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage{extarrows}
+\usetikzlibrary{positioning}
+\usetikzlibrary{svg.path}
+\usepackage{xcolor}
+\usepackage{soul}
+\usepackage{longtable}
+
+\graphicspath{ {./images/} }
+
+\author{EasonSYC}
+\title{A Simple Problem}
+\date{12.19.2021}
+
+\geometry{a4paper, scale=0.8}
+
+\begin{document}
+
+	\maketitle
+
+	\textbf{Problem} $a, b$ and $c$ are positive real numbers where $abc=1$. Show that $$\frac{ab}{a^5+b^5+ab}+\frac{bc}{b^5+c^5+bc}+\frac{ac}{a^5+c^5+ac} \leq 1.$$
+
+	~\\
+
+	\textbf{Proof} As $a, b$ are real numbers, $$a^5 + b^5 \geq a^3 b^2 + a^2 b^3, $$
+
+	with equality if and only if $a=b$.
+
+	Hence,
+
+	\begin{align*}
+		\frac{ab}{a^5 + b^5 + ab} &= \frac{a^2 b^2 c}{a^5 + b^5 + a^2 b^2 c} \\
+		&\leq \frac{a^2 b^2 c}{a^3 b^2 + a^2 b^3 + a^2 b^2 c}\\
+		&= \frac{c}{a + b + c}.\\
+	\end{align*}
+
+	Similar results can be drawn, by replacing $a, b$ with $b, c$ and $c, a$:
+
+	$$\frac{bc}{b^5 + c^5 + bc} \leq \frac{a}{a + b + c}, \frac{ca}{c^5 + a^5 + ca} \leq \frac{b}{a + b + c}.$$
+
+	Then
+
+	$$\frac{ab}{a^5+b^5+ab}+\frac{bc}{b^5+c^5+bc}+\frac{ac}{a^5+c^5+ac} \leq 1,$$
+
+	with equality if and only if $a=b=c$.
+
+\end{document}
