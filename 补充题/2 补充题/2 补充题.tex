@@ -1,0 +1,128 @@
+%!TEX TX-program = xelatex
+\documentclass[8pt]{article}
+
+\usepackage{ctex}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage{extarrows}
+\usetikzlibrary{positioning}
+\usetikzlibrary{svg.path}
+\usepackage{xcolor}
+\usepackage{soul}
+
+\graphicspath{ {./images/} }
+
+\author{高一（6）班\ 邵亦成\ 26号}
+\title{2 补充题}
+\date{2021年10月31日}
+
+\geometry{a4paper, scale=0.8}
+
+\begin{document}
+
+	\maketitle
+
+	函数$f(x)$对于任意实数$f(x)$满足条件:
+
+	$$f(x+2)=\frac{1}{f(x)},$$
+
+	且有$f(0)=1, f(1)=-5.$
+
+	\begin{enumerate}[label=(\arabic*)]
+		\item 计算$f(2), f(4), f(6), f(8)$的值, 并猜想$f(2n)$的结果, 其中$n \in \mathbf{N}.$
+		\item 计算$f(3), f(5), f(7), f(9)$的值, 并猜想$f(2n-1)$的结果, 其中$n \in \mathbf{N}.$
+		\item 试证明(1), (2)所猜想的结果.
+	\end{enumerate}
+	~\\
+
+	\begin{enumerate}[label=(\arabic*)]
+		\item 计算$f(2), f(4), f(6), f(8)$的值, 并猜想$f(2n)$的结果, 其中$n \in \mathbf{N}.$
+
+			$$f(2)=\frac{1}{f(2-2)}=\frac{1}{f(0)}=\frac{1}{1}=1,$$
+
+			$$f(4)=\frac{1}{f(4-2)}=\frac{1}{f(2)}=\frac{1}{1}=1,$$
+
+			$$f(6)=\frac{1}{f(6-2)}=\frac{1}{f(4)}=\frac{1}{1}=1,$$
+
+			$$f(8)=\frac{1}{f(8-2)}=\frac{1}{f(6)}=\frac{1}{1}=1,$$
+
+			猜想:
+
+			$$f(2n)=1, n \in \mathbf{N}. \eqno{(1)}$$
+
+		\item 计算$f(3), f(5), f(7), f(9)$的值, 并猜想$f(2n-1)$的结果, 其中$n \in \mathbf{N}.$
+
+			$$f(3)=\frac{1}{f(3-2)}=\frac{1}{f(1)}=\frac{1}{-5}=-\frac{1}{5},$$
+
+			$$f(5)=\frac{1}{f(5-2)}=\frac{1}{f(3)}=\frac{1}{-\frac{1}{5}}=-5,$$
+
+			$$f(7)=\frac{1}{f(7-2)}=\frac{1}{f(5)}=\frac{1}{-5}=-\frac{1}{5},$$
+
+			$$f(9)=\frac{1}{f(9-2)}=\frac{1}{f(7)}=\frac{1}{-\frac{1}{5}}=-5,$$
+
+			猜想:
+
+			$$f(2n-1)=
+			\left\{
+			\begin{array}{rl}
+			-5,& n\text{是奇数},\\
+			\displaystyle -\frac{1}{5}, &n\text{是偶数}.\\
+			\end{array}
+			\right.
+			\eqno{(2)}
+			$$
+
+		\item 试证明 (1), (2) 所猜想的结果.
+
+			\textbf{下证 (1) 式成立:}
+
+				考虑$n=0$， 有
+
+				$$f(2\times0)=f(0)=1$$
+
+				符合 (1) 式.
+
+				假设 (1) 式对$n=k$成立, 下证其对$n=k+1$成立.
+
+				$$f[2(k+1)]=f(2k+2)=\frac{1}{f(2k+2-2)}=\frac{1}{f(2k)}=\frac{1}{1}=1$$
+
+				成立.
+
+				由第一数学归纳法, (1) 式成立.
+
+			\textbf{下证 (2) 式成立:}
+
+				考虑$n=0$, 有
+
+				$$f(1)=\frac{1}{f(1-2)}=\frac{1}{f(-1)}=\frac{1}{f(2\times 0-1)}=-5 \Rightarrow f(2\times0-1)=f(-1)=-\frac{1}{5}$$
+
+				符合 (2) 式.
+
+				考虑$n=1$, 有
+
+				$$f(2\times 1-1)=f(1)=-5$$
+
+				符合 (2) 式.
+
+				假设 (2) 式对$n=2k$成立, 下证其对$n=2k+2$成立.
+
+				$$f[2(2k+2)-1]=f(4k+3)=\frac{1}{f(4k+3-2)}=\frac{1}{f(4k+1)}=\frac{1}{\frac{1}{f(4k+1-2)}}=\frac{1}{\frac{1}{f(4k-1)}}=f(4k-1)=f[2(2k)-1]=-\frac{1}{5}$$
+
+				成立.
+
+				假设 (2) 式对$n=2k+1$成立, 下证其对$n=2k+3$成立.
+
+				$$f[2(2k+3)-1]=f(4k+5)=\frac{1}{f(4k+5-2)}=\frac{1}{f(4k+3)}=\frac{1}{\frac{1}{f(4k+3-2)}}=\frac{1}{\frac{1}{f(4k+1)}}=f(4k+1)=f[2(2k+1)-1]=-5$$
+
+				成立.
+
+				由第一数学归纳法, (2) 式成立.
+
+	\end{enumerate}
+
+\end{document}

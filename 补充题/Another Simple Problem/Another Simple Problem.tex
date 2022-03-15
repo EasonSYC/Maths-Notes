@@ -1,0 +1,61 @@
+%!TEX TX-program = xelatex
+\documentclass[8pt]{article}
+
+\usepackage{ctex}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage{extarrows}
+\usetikzlibrary{positioning}
+\usetikzlibrary{svg.path}
+\usepackage{xcolor}
+\usepackage{soul}
+\usepackage{longtable}
+
+\graphicspath{ {./images/} }
+
+\author{EasonSYC}
+\title{Another Simple Problem}
+\date{12.19.2021}
+
+\geometry{a4paper, scale=0.8}
+
+\begin{document}
+
+	\maketitle
+
+	\textbf{Problem} $a, b, c, p, q$ and $r$ are positive real numbers where $abc=a+b+c$. Show that $$\frac{2p}{\sqrt{1+a^2}}+\frac{2q}{\sqrt{1+b^2}}+\frac{2r}{\sqrt{1+c^2}} \leq \frac{pq}{r} + \frac{pr}{q} + \frac{qr}{p}. \eqno{(1)}$$
+
+	~\\
+
+	\textbf{Proof} Let $a = \tan A, b = \tan B, c = \tan C$, where $A+B+C = \pi, 0<A, B, C<\dfrac{\pi}{2},$
+
+	$$\tan C = -\tan(A + B) = -\frac{\tan A + \tan B}{1 - \tan A \tan B}.$$
+
+ 	Hence,
+
+ 	$$\tan A + \tan B + \tan C = \tan A \tan B \tan C.$$
+
+ 	Threfore,
+
+ 	$$\frac{2p}{\sqrt{1+a^2}}+\frac{2q}{\sqrt{1+b^2}}+\frac{2r}{\sqrt{1+c^2}} = 2p \cos A + 2q \cos B + 2r \cos C.$$
+
+ 	(1) is equlivant to the following inequality:
+
+ 	$$2p \cos A + 2q \cos B + 2r \cos C \leq \frac{pq}{r} + \frac{pr}{q} + \frac{qr}{p}. \eqno{(2)}$$
+
+ 	According to the Wolstenholme’s cyclic inequality
+
+ 	$$\forall \Delta ABC, x, y, z\in\mathbb{R}, x^2 + y^2 + z^2 \geq 2yz \cos A + 2zx \cos B + 2xy \cos C,$$
+
+ 	let $p=2yz, q=2zx, r=2xy$, the following lemma can be drawn:
+
+ 	$$\forall \Delta ABC, p, q, r\in\mathbb{R}_{+}, p \cos A + q \cos B + r \cos C \leq \frac{1}{2} \left(\frac{pq}{r} + \frac{pr}{q} + \frac{qr}{p}\right).\eqno{(3)}$$
+
+ 	(3) is equlivant to (2), which is equlivant to (1). Therefore, the original inequality is proven.
+
+\end{document}
