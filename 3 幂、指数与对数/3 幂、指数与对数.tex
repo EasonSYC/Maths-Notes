@@ -1,0 +1,213 @@
+%!TEX TX-program = xelatex
+\documentclass[8pt]{article}
+
+\usepackage{ctex}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usetikzlibrary{svg.path}
+\usepackage{xcolor}
+
+\graphicspath{ {./images/} }
+
+\title{3 幂、指数与对数}
+\author{高一（6）班\ 邵亦成\ 26号}
+\date{2021年10月28日}
+
+\geometry{a4paper, scale=0.8}
+
+\setcounter{section}{2}
+
+\begin{document}
+
+	\maketitle
+
+	\section{幂、指数与对数}
+		\subsection{幂与指数}
+			\textbf{正整数指数幂的定义}：$\displaystyle a^n=\prod_{i=1}^{n}{a} (a \in \mathbf{R}, n\in \mathbf{N}^{*})$，读作$a$的$n$次幂.
+
+			\textbf{零和负整数指数幂的定义}：$a^0=1, a^{-n}=\displaystyle\frac{1}{a^n}$ $(a\in\mathbf{R} \setminus \{0\}, n\in\mathbf{N}^{*}).$
+
+			\textbf{根式概念的拓展}：对$n\in\mathbf{Z} \cap [2, +\infty), x^n=a$: $x$是$a$的$n$次方根. 当$n$是奇数时，$x=\sqrt[n]{a}$；当$n$是偶数时，$x=\pm\sqrt[n]{a}, \sqrt[n]{a}>0, a>0$. 定义$\sqrt[n]{0}=0$. 式子$\sqrt[n]{a}$叫作$a$的$n$次根式，$n$叫作根指数，$a$叫作被开方数.
+
+			\textbf{根式的运算性质}：$\sqrt[n]{a^n}=a, $当$n$为奇数；$\sqrt[n]{a^n}=|a|, $当$n$为偶数.
+
+			\textbf{有理数整数幂的定义}：对于所有使$\displaystyle \sqrt[n]{a^m}$有意义的实数$a$可定义$\displaystyle a^\frac{m}{n}=\sqrt[n]{a^m}.$ 特殊地，$a^\frac{1}{n}$在$a>0$时总是可以被定义，在$a<0$且$n$是正奇数时同样可以被定义，在$a>0$且$n$是正偶数时不可被定义（因为$\nexists x\in\mathbf{R}: x^n=a<0)$，在$a=0$可定义$0^{\frac{1}{n}}=0.$
+
+			\textbf{指数幂的运算性质}：(1) $a^s a^t=a^{s+t}$ (2) $\left(a^s\right)^t=a^{st}$ (3) $(ab)^t=a^t b^t$ $(a,b \in \mathbf{R}^{+}, s, t\in \mathbf{Q}).$
+
+			\textbf{幂的基本不等式}：$a>1, s>0 \Rightarrow a^s>1.$
+
+		\newpage
+		\subsection{对数}
+			\subsubsection{对数的定义与基础运算性质}
+				\textbf{对数的定义}：在$a\in \mathbf{R}^{+} \setminus \{1\}, N\in \mathbf{R}^{+}$的条件下，唯一满足$a^x=N$的数$x$称为$N$以$a$为底的对数，称$N$为真数，用符号记作$x=\log_a{N}$. 即：$a^b=N \Leftrightarrow \log_{a}{N}=b (a\in \mathbf{R}^{+} \setminus \{1\}, N\in \mathbf{R}^{+}).$
+
+				\textbf{常用对数}：通常以$10$为底的对数，叫作常用对数，用符号记作$\lg{N}=\log_{10}{N}.$
+
+				\textbf{自然对数}：通常以自然常数$\rm{e} \approx 2.718$为底的对数，叫作自然对数，用符号记作$\ln{N}=\log_{\rm{e}}{N}.$
+
+				\textbf{对数的运算性质 (1)}：$\displaystyle a^{\log_{a}{N}}=N (a\in \mathbf{R}^{+} \setminus \{1\}, N\in \mathbf{R}^{+}).$
+
+				\textbf{对数的运算性质 (2) (3)}：$\displaystyle \log_a{1}=0, \log_a{a}=1 (a\in \mathbf{R}^{+} \setminus \{1\}).$
+
+				~\\
+
+				\textbf{例一}：求$\displaystyle 27^{\frac{2}{3}+\log_{3}{2}}$.
+					~\\
+
+					$$
+					\begin{array}{rcl}
+					\text{原式}&=&\displaystyle 27^\frac{2}{3} \times {\left(3^3\right)}^{\log_{3}{2}}\\
+					&=&9\times {\left(3^{\log_{3}{2}}\right)}^{3}\\
+					&=&9\times 2^3\\
+					&=&72.
+					\end{array}
+					$$
+
+					\textcolor{red}{\textbf{总结：一道带有指数与对数的计算题，需要注意每一步的计算依据.}}
+
+				~\\
+
+				\textbf{例二}：求$\displaystyle a^{\log_{a}{b}\cdot\log_{b}{N}}$.
+					~\\
+
+					$$
+					\begin{array}{rcl}
+					\text{原式}&=&\displaystyle b^{\log_{b}{N}}\\
+					&=&N.
+					\end{array}
+					$$
+
+					\textcolor{red}{\textbf{总结：本题在后续有更简便的计算方法（先化简指数）.}}
+
+			\subsubsection{对数与真数运算的关系与换底公式}
+				\textbf{真数的乘法，对数的加法}：$\forall a\in \mathbf{R}^{+} \setminus \{1\}, N, M\in \mathbf{R}^{+}: \log_{a}{(MN)}=\log_{a}{M}+\log_{b}{N}.$
+
+				\textbf{真数的除法，对数的减法}：$\forall a\in \mathbf{R}^{+} \setminus \{1\}, N, M\in \mathbf{R}^{+}: \displaystyle\log_{a}{\left(\frac{M}{N}\right)}=\log_{a}{M}-\log_{b}{N}.$
+
+				\textbf{真数的指数幂，对数的积}：$\forall a\in \mathbf{R}^{+} \setminus \{1\}, N, M\in \mathbf{R}^{+}, c\in\mathbf{R}: \displaystyle \log_{a}{N^c}=c \log_{a}{N}.$
+
+				\textbf{对数换底公式}：$\forall a, n\in \mathbf{R}^{+} \setminus \{1\}, b\in \mathbf{R}^{+}: \displaystyle \log_{a}{b}=\frac{\log_{n}{b}}{\log_{n}{a}}.$
+
+				\textbf{对数换底公式的推论 (1)}：$\forall a, b\in \mathbf{R}^{+} \setminus \{1\}: \displaystyle \log_{b}{a}=\frac{1}{\log_{a}{b}}.$
+
+				\textbf{对数换底公式的推论 (2) (3)}：$\forall a\in \mathbf{R}^{+} \setminus \{1\}, b\in \mathbf{R}^{+}, n\in \mathbf{R} \setminus \{0\}: \displaystyle \log_{a^n}{b}=\frac{\log_{a}{b}}{n}, \log_{\sqrt[n]{a}}{b}=n\log_{a}{b}.$
+
+				\textbf{对数换底公式的推论 (2) (3) 的一般化}：$\forall a\in \mathbf{R}^{+} \setminus \{1\}, b\in \mathbf{R}^{+}, n\in \mathbf{R} \setminus \{0\}, m\in \mathbf{R}: \displaystyle \log_{a^n}{b^m}=\frac{m}{n} \log_{a}{b}.$ 特殊地，在$n=m\neq 0$时有$\displaystyle \log_{a^n}{b^n}=\log_{a}{b}$；在$a=b\neq 1$时有$\displaystyle \log_{a^n}{a^m}=\frac{m}{n}.$
+
+				\textbf{对数换底公式的推论的应用}：$\forall n \in \mathbf{Z} \cap [2, +\infty), a_1, a_2, \cdots, a_n \in \mathbf{R}^{+} \setminus \{1\}, \text{ 定义 } a_{n+1}=a_1: \displaystyle \prod_{i=1}^{n}{\log_{a_i}{a_{i+1}}}=\log_{a_1}{a_n}.$
+
+				~\\
+
+				\textbf{例一}：$\displaystyle \frac{1}{\log_2 3}+\frac{1}{\log_{13.5} 3}$.
+					~\\
+
+					$$
+					\begin{array}{rcl}
+					\text{原式}&=&\log_{3}{2}+\log_{3}{13.5}\\
+					&=&\log_{3}{27}\\
+					&=&3.
+					\end{array}
+					$$
+
+					\textcolor{red}{\textbf{总结：利用 $\displaystyle \log_{b}{a}=\frac{1}{\log_{a}{b}}$与$\log_{a}{(MN)}=\log_{a}{M}+\log_{b}{N}$进行化简，随后由定义计算出结果.}}
+
+				~\\
+
+				\textbf{例二}：$\displaystyle \frac{1}{\log_2 32}+\frac{1}{5\log_{4} 2}+\frac{1}{1+\log_{8} 4}$.
+					~\\
+
+					$$
+					\begin{array}{rcl}
+					\text{原式}&=&\displaystyle \frac{1}{5}+\frac{\log_{2}{4}}{5}+\frac{1}{1+\frac{2}{3}}\\
+					&=&\displaystyle \frac{1}{5}+\frac{2}{5}+\frac{3}{5}\\\\
+					&=&\displaystyle \frac{6}{5}.
+					\end{array}
+					$$
+
+					\textcolor{red}{\textbf{总结：利用 $\displaystyle \log_{b}{a}=\frac{1}{\log_{a}{b}}$与$\log_{a^n}{a^m}=\frac{m}{n}$进行化简，随后计算出结果.}}
+
+				~\\
+
+				\textbf{例三}：$\displaystyle 2^{\frac{1}{\lg 2}}+3^{\frac{1}{\lg 3}}+5^{\frac{1}{\lg 5}}$.
+					~\\
+
+					$$
+					\begin{array}{rcl}
+					\text{原式}&=&2^{\log_{2}{10}}+3^{\log_{3}{10}}+5^{\log_{5}{10}}\\
+					&=&30.
+					\end{array}
+					$$
+
+					\textcolor{red}{\textbf{总结：利用 $\displaystyle \log_{a}{b}=\frac{\log_{n}{b}}{\log_{n}{a}}$与$\displaystyle a^{\log_{a}{N}}=N$进行化简，随后计算出结果.}}
+
+				~\\
+
+				\textbf{例四}：已知$\log_{18} 3 = a$，试用$a$表示$\log_{2} 3$.
+					~\\
+
+					$$
+					\frac{1}{a} = \log_{3} 18=2+\log_{3} 2 \Rightarrow \log_{3} 2=\frac{1}{a}-2 \Rightarrow \log_{2} 3=\frac{1}{\frac{1}{a}-2}=\frac{a}{1-2a}.
+					$$
+
+					\textcolor{red}{\textbf{总结：$18$是合数，放在对数的真数上比放在底数上方便.}}
+
+				~\\
+
+				\textbf{例五}：$\displaystyle 5^{\log_{25} (\sqrt{3}-\sqrt{5})^2} - 7^{\log_{49} (\sqrt{5}+\sqrt{3})^2}.$
+					~\\
+
+					$$
+					\begin{array}{rcl}
+						\text{原式}&=&\displaystyle 5^{\log_{5} |\sqrt{3}-\sqrt{5}|} - 7^{\log_{7} |\sqrt{5}+\sqrt{3}|}\\
+						&=&|\sqrt{3}-\sqrt{5}|-|\sqrt{5}+\sqrt{3}|\\
+						&=&\sqrt{5}-\sqrt{3}-\sqrt{5}-\sqrt{3}\\
+						&=&-2\sqrt{3}.
+					\end{array}
+					$$
+
+					\textcolor{red}{\textbf{总结：使用运算定律$a^{\log_{a}{N}}=N$与$\log_{a^n}{b^n}=\log_{a}{b}$.}}
+
+				~\\
+
+				\textbf{例六}：已知$\displaystyle 2^{6a}=3^{3b}=6^{2c}.$ 试建立$a, b, c$间的关系式.
+					~\\
+
+					对等式取自然对数，有$\displaystyle \ln{2^{6a}}=\ln{3^{3b}}=\ln{6^{2c}}.$
+
+					令$\displaystyle 6a\cdot \ln{2}=3b\cdot \ln{3}=2c\cdot \ln{b}=k$,
+
+					则有$\displaystyle \ln{2}=\frac{k}{6a}, \ln{3}=\frac{k}{3b}, \ln{6}=\frac{k}{2c}.$
+
+					由$\displaystyle \ln{2}+\ln{3}=\ln{6}$有$\displaystyle \frac{1}{6a}+\frac{1}{3b}=\frac{1}{2c},$
+
+					即$\displaystyle \frac{1}{a}+\frac{2}{b}=\frac{3}{c}.$
+					~\\
+
+					\textcolor{red}{\textbf{总结：(1) 在满足对数运算的定义域的前提下，等式两边取同底对数（一般选用$\lg$或$\ln$），等式仍然成立 (2) 观察到满足$a\times b=c$的情况下考虑凑$\ln{a}+\ln{b}=\ln{c}$.}}
+
+				~\\
+
+				\textbf{例七}：若$\displaystyle \lg{x}=a, \lg{y}=b, \lg{z}=c$且$a+b+c=0$, 求$\displaystyle M=x^{\frac{1}{b}+\frac{1}{c}}\cdot y^{\frac{1}{a}+\frac{1}{c}}\cdot z^{\frac{1}{a}+\frac{1}{b}}.$
+					~\\
+
+					$a+b+c=\lg{xyz}=0 \Rightarrow xyz=1$.
+
+					$$
+					\begin{array}{rcl}
+						M&=&\displaystyle (xz)^{\frac{1}{b}}\cdot(xy)^{\frac{1}{c}}\cdot (yz)^{\frac{1}{a}}\\
+						&=&\displaystyle \left(y^{-1}\right)^{\log_{y} 10}\cdot\left(z^{-1}\right)^{\log_{z} 10}\cdot\left(x^{-1}\right)^{\log_{x} 10}\\
+						&=&\left(10^{-1}\right)^3\\
+						&=&\displaystyle \frac{1}{1000}.\\
+					\end{array}
+					$$
+
+					\textcolor{red}{\textbf{总结：$a+b+c=0$的代入要熟悉对数的基本运算定律$\log_{a}{(MN)}=\log_{a}{M}+\log_{b}{N}$, 随后拆指数运算即可.}}
+
+\end{document}
