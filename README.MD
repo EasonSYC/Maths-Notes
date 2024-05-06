@@ -1,4 +1,4 @@
-# Maths-Notes
+# Maths Notes
 
 By EasonSYC
 
