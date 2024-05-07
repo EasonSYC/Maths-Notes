@@ -1,6 +1,6 @@
 # Maths Notes
 
-By EasonSYC
+By Eason Shao
 
 This is a project of my Maths Notes whilst studying in China.
 
